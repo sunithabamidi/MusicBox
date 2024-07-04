@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MusicBox - Music is here!</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li class="brand"><img src="logo.png" alt="" /></li>
+        <li>Home</li>
+        <li>About</li>
+      </ul>
+    </nav>
+    <div class="container">
+      <div class="songList">
+        <h1>Best of NCS - No Copyright Sounds</h1>
+        <div class="songItemContainer">
+          <!-- here -->
+          <div class="songItem"></div>
+          <div class="songItem"></div>
+          <div class="songItem"></div>
+          <div class="songItem"></div>
+          <div class="songItem"></div>
+          <div class="songItem"></div>
+          <div class="songItem"></div>
+          <div class="songItem"></div>
+          <div class="songItem"></div>
+          <!-- till here -->
+        </div>
+      </div>
+      <div class="songBanner"></div>
+    </div>
+    <div class="bottom">
+      <input type="range" id="myProgressBar" min="0" max="100" value="0" />
+      <div class="icons">
+        <!-- fontAwsome icons -->
+        <i class="fa-solid fa-3x fa-backward-step" id="previous"></i>
+        <i class="far fa-3x fa-play-circle" id="masterPlay"></i>
+        <i class="fa-solid fa-3x fa-forward-step" id="next"></i>
+      </div>
+      <div class="songInfo">
+        <img src="playing.gif" width="42px" alt="" id="gif" />
+        <span id="masterSongName">Warriyo - Mortals [NCS Release]</span>
+      </div>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/e687a9e8fb.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
