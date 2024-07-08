@@ -41,14 +41,14 @@ nav ul {
   border-radius: 12px;
   padding: 34px;
   background-size: cover;
-  background-image: url("./assets/bg.jpg");
+  background-image: url("bg.jpg");
 }
 .songItemContainer {
   margin-top: 74px;
 }
 
 .songItem {
-  min-height: 45px;
+  height: 45px;
   display: flex;
   background-color: white;
   color: black;
@@ -64,14 +64,8 @@ nav ul {
   border-radius: 34px;
 }
 
-.songlistplay {
-  display: flex;
-  align-items: center;
-  flex-wrap: nowrap;
-  margin: 0 23px;
-}
 .timestamp {
-  margin-right: 10px;
+  margin: 0 23px;
   /* padding-right: 20px; */
 }
 .timestamp i {
@@ -85,7 +79,7 @@ nav ul {
   flex-direction: column;
   position: sticky;
   bottom: 0;
-  min-height: 100px;
+  height: 100px;
   background-color: black;
   color: white;
 }
@@ -94,15 +88,6 @@ nav ul {
   width: 80vw;
   cursor: pointer;
 }
-
-.songInfo-icons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  flex-wrap: wrap;
-}
-
 .icons {
   margin-top: 14px;
 }
@@ -113,26 +98,12 @@ nav ul {
 }
 
 .songInfo {
-  /* position: absolute; */
+  position: absolute;
   left: 10vw;
-  width: 80vw;
   font-family: "Varela Round", sans-serif;
 }
 
 .songInfo img {
   opacity: 0;
   transition: opacity 0.4s ease-in;
-}
-
-@media only screen and (max-width: 961px) {
-  .container {
-    width: 90%;
-    justify-content: center;
-  }
-}
-@media only screen and (max-width: 371px) {
-  .container {
-    width: 100%;
-    justify-content: center;
-  }
 }

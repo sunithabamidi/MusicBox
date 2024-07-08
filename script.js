@@ -2,53 +2,53 @@ console.log("welcome to musicbox");
 let songs = [
   {
     songName: "Warriyo - Mortals [NCS Release]",
-    filePath: "assets/songs/1.mp3",
-    coverPath: "assets/covers/1.jpg",
+    filePath: "songs/1.mp3",
+    coverPath: "covers/1.jpg",
   },
   {
     songName: "Cielo - Huma-Huma",
-    filePath: "assets/songs/2.mp3",
-    coverPath: "assets/covers/2.jpg",
+    filePath: "songs/2.mp3",
+    coverPath: "covers/2.jpg",
   },
   {
     songName: "DEAF KEV - Invincible [NCS Release]-320k",
-    filePath: "assets/songs/3.mp3",
-    coverPath: "assets/covers/3.jpg",
+    filePath: "songs/3.mp3",
+    coverPath: "covers/3.jpg",
   },
   {
     songName: "Different Heaven & EH!DE - My Heart [NCS Release]",
-    filePath: "assets/songs/4.mp3",
-    coverPath: "assets/covers/4.jpg",
+    filePath: "songs/4.mp3",
+    coverPath: "covers/4.jpg",
   },
   {
     songName: "Janji-Heroes-Tonight-feat-Johnning-NCS-Release",
-    filePath: "assets/songs/5.mp3",
-    coverPath: "assets/covers/5.jpg",
+    filePath: "songs/5.mp3",
+    coverPath: "covers/5.jpg",
   },
   {
     songName: "Rabba - Salam-e-Ishq",
-    filePath: "assets/songs/2.mp3",
-    coverPath: "assets/covers/6.jpg",
+    filePath: "songs/2.mp3",
+    coverPath: "covers/6.jpg",
   },
   {
     songName: "Sakhiyaan - Salam-e-Ishq",
-    filePath: "assets/songs/2.mp3",
-    coverPath: "assets/covers/7.jpg",
+    filePath: "songs/2.mp3",
+    coverPath: "covers/7.jpg",
   },
   {
     songName: "Bhula Dena - Salam-e-Ishq",
-    filePath: "assets/songs/2.mp3",
-    coverPath: "assets/covers/8.jpg",
+    filePath: "songs/2.mp3",
+    coverPath: "covers/8.jpg",
   },
   {
     songName: "Tumhari Kasam - Salam-e-Ishq",
-    filePath: "assets/songs/2.mp3",
-    coverPath: "assets/covers/9.jpg",
+    filePath: "songs/2.mp3",
+    coverPath: "covers/9.jpg",
   },
   {
     songName: "Na Jaana - Salam-e-Ishq",
-    filePath: "assets/songs/4.mp3",
-    coverPath: "assets/covers/10.jpg",
+    filePath: "songs/4.mp3",
+    coverPath: "covers/10.jpg",
   },
 ];
 
@@ -59,7 +59,7 @@ let songIndex = 1;
 let masterSongName = document.getElementById("masterSongName");
 
 //audio element
-let audioElement = new Audio("./assets/songs/1.mp3");
+let audioElement = new Audio("./songs/1.mp3");
 
 //masterplay
 let masterPlay = document.getElementById("masterPlay");
@@ -77,12 +77,13 @@ for (let i = 0; i < songItems.length; i++) {
   songItems[i].innerHTML = `
             <img src=${songs[i].coverPath} alt="${i + 1}" />
               <span class="songName">${songs[i].songName}</span>
-                <div class="songlistplay">
+                <span class="songlistplay">
                   <span class="timestamp"
-                    >05:30</span>
-                    <i id=${i + 1} class="far songItemPlay fa-play-circle"></i
-                  >
-                </div>
+                    >05:30 <i id=${
+                      i + 1
+                    } class="far songItemPlay fa-play-circle"></i
+                  ></span>
+                </span>
   `;
 }
 
@@ -147,12 +148,12 @@ songItemsPlay.forEach((element) => {
       songIndex = parseInt(e.target.id);
       console.log(e.target, songIndex);
       handlePlay(e.target);
-      audioElement.src = `assets/songs/${songIndex}.mp3`;
+      audioElement.src = `songs/${songIndex}.mp3`;
       masterSongName.innerText = songs[songIndex - 1].songName;
       audioElement.currentTime = 0;
       audioElement.play();
       handlePlay(masterPlay);
-      console.log("masterplay", songIndex, `assets/songs/${songIndex}.mp3`);
+      console.log("masterplay", songIndex, `songs/${songIndex}.mp3`);
     } else {
       audioElement.pause();
       handlePause(masterPlay);
@@ -166,7 +167,7 @@ document.getElementById("previous").addEventListener("click", () => {
     resetOtherSongsPlay();
     songIndex = songIndex - 1;
     masterSongName.innerText = songs[songIndex - 1].songName;
-    audioElement.src = `assets/songs/${songIndex}.mp3`;
+    audioElement.src = `songs/${songIndex}.mp3`;
     audioElement.currentTime = 0;
     audioElement.play();
     handlePlay(masterPlay);
@@ -176,7 +177,7 @@ document.getElementById("previous").addEventListener("click", () => {
       }
     });
   } else songIndex = 0;
-  console.log("previous", songIndex, `assets/songs/${songIndex}.mp3`);
+  console.log("previous", songIndex, `songs/${songIndex}.mp3`);
 });
 
 document.getElementById("next").addEventListener("click", () => {
@@ -186,7 +187,7 @@ document.getElementById("next").addEventListener("click", () => {
     resetOtherSongsPlay();
     songIndex = songIndex + 1;
     masterSongName.innerText = songs[songIndex - 1].songName;
-    audioElement.src = `assets/songs/${songIndex}.mp3`;
+    audioElement.src = `songs/${songIndex}.mp3`;
     audioElement.currentTime = 0;
     audioElement.play();
     handlePlay(masterPlay);
@@ -196,5 +197,5 @@ document.getElementById("next").addEventListener("click", () => {
       }
     });
   }
-  console.log("next", songIndex, `assets/songs/${songIndex}.mp3`);
+  console.log("next", songIndex, `songs/${songIndex}.mp3`);
 });
